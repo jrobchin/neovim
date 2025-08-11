@@ -14,7 +14,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>p', '"+p', { desc = 'Paste from system cli
 vim.keymap.set({ 'n', 'x' }, '<leader>P', '"+P', { desc = 'Paste from system clipboard before the cursor position' })
 
 -- Navigating buffers
-vim.keymap.set('n', '<leader>bb', '<C-^>', { desc = 'Switch to alternate buffer' })
+vim.keymap.set('n', '<leader>bf', '<C-^>', { desc = 'Switch to alternate buffer' })
 vim.keymap.set('n', '<leader>bn', ':bnext<cr>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>bp', ':bprevious<cr>', { desc = 'Previous buffer' })
 

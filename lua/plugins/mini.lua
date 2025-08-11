@@ -2,6 +2,7 @@ vim.pack.add({ "https://github.com/echasnovski/mini.nvim" })
 
 require("mini.icons").setup()
 require("mini.pairs").setup()
+require("mini.statusline").setup()
 
 local diff = require("mini.diff")
 diff.setup({

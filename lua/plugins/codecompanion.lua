@@ -8,6 +8,16 @@ require("codecompanion").setup({
 	strategies = {
 		chat = {
 			adapter = "openrouter",
+			keymaps = {
+				completion = {
+					modes = {
+						i = "<C-Space>",
+					},
+					index = 1,
+					callback = "keymaps.completion",
+					description = "Completion Menu",
+				},
+			},
 		},
 		inline = {
 			adapter = "openrouter",

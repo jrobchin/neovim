@@ -11,8 +11,8 @@ vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 
 -- Show whitespace characters
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Search
 vim.opt.ignorecase = true

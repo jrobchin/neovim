@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/nvim-lua/plenary.nvim" })
+vim.pack.add({ { src = "https://github.com/nvim-lua/plenary.nvim", version = "master" } })
 vim.pack.add({ "https://github.com/sindrets/diffview.nvim" })
 
 require("diffview").setup()

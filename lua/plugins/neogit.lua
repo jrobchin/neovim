@@ -15,6 +15,3 @@ neogit.setup({
 local keymap = vim.keymap.set
 
 keymap('n', '<Leader>gs', function() require('neogit').open() end, { desc = 'Neogit Status' })
-keymap('n', '<Leader>gc', function() require('neogit').commit() end, { desc = 'Neogit Commit' })
-keymap('n', '<Leader>gp', function() require('neogit').pull() end, { desc = 'Neogit Pull' })
-keymap('n', '<Leader>gu', function() require('neogit').push() end, { desc = 'Neogit Push' })

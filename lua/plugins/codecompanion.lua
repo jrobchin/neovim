@@ -1,8 +1,7 @@
 vim.pack.add({
 	{ src = "https://github.com/nvim-lua/plenary.nvim", version = "master" },
+	{ src = "https://github.com/olimorris/codecompanion.nvim" },
 })
-
-vim.pack.add({ "https://github.com/olimorris/codecompanion.nvim" })
 
 require("codecompanion").setup({
 	strategies = {

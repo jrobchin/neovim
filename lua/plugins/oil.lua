@@ -1,4 +1,7 @@
-vim.pack.add({ "https://github.com/stevearc/oil.nvim" })
+vim.pack.add(
+	{ src = "https://github.com/stevearc/oil.nvim" },
+	{ src = "https://github.com/refractalize/oil-git-status.nvim" }
+)
 
 local oil = require("oil")
 
@@ -26,12 +29,10 @@ oil.setup({
 })
 
 vim.keymap.set("n", "<leader>e", function()
-	oil.toggle_float()
-end, { desc = "Open Oil file floating" })
-vim.keymap.set("n", "<leader>E", function()
 	oil.open()
 end, { desc = "Open Oil file explorer" })
-
-vim.pack.add({ "https://github.com/refractalize/oil-git-status.nvim" })
+vim.keymap.set("n", "<leader>E", function()
+	oil.toggle_float()
+end, { desc = "Open Oil file floating" })
 
 require("oil-git-status").setup()

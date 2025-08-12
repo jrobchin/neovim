@@ -1,9 +1,10 @@
-vim.pack.add({ { src = "https://github.com/nvim-lua/plenary.nvim", version = "master" } })
-vim.pack.add({ "https://github.com/sindrets/diffview.nvim" })
+vim.pack.add({
+	{ src = "https://github.com/nvim-lua/plenary.nvim", version = "master" },
+	{ src = "https://github.com/sindrets/diffview.nvim" },
+	{ src = "https://github.com/NeogitOrg/neogit" },
+})
 
 require("diffview").setup()
-
-vim.pack.add({ "https://github.com/NeogitOrg/neogit" })
 
 local neogit = require("neogit")
 neogit.setup({

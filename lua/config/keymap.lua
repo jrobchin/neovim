@@ -21,9 +21,6 @@ vim.keymap.set("n", "<leader>bp", ":bprevious<cr>", { desc = "Previous buffer" }
 -- Ctrl-L redraws the screen by default. Now it will also toggle search highlighting.
 vim.keymap.set("n", "<C-l>", ":set hlsearch!<cr><C-l>", { desc = "Toggle search highlighting" })
 
--- Toggle visible whitespace characters
-vim.keymap.set("n", "<leader>l", ":listchars!<cr>", { desc = "Toggle [l]istchars" })
-
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
@@ -31,3 +28,9 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("n", "<leader>xx", "<Cmd>source %<CR>", { desc = "Source current file" })
 vim.keymap.set("n", "<leader>x", "<Cmd>:.lua<CR>", { desc = "Lua: execute current line" })
 vim.keymap.set("v", "<leader>x", "<Cmd>:lua<CR>", { desc = "Lua: execute current selection" })
+
+-- Keybinds for quickfix and location lists
+vim.keymap.set("n", "<leader>q", ":copen<CR>", { desc = "Open quickfix list" })
+vim.keymap.set("n", "<leader>Q", ":cclose<CR>", { desc = "Close quickfix list" })
+vim.keymap.set("n", "<leader>l", ":lopen<CR>", { desc = "Open location list" })
+vim.keymap.set("n", "<leader>L", ":lclose<CR>", { desc = "Close location list" })

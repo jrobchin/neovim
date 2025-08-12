@@ -1,7 +1,9 @@
 vim.pack.add({ "https://github.com/stevearc/oil.nvim" })
 
+local oil = require("oil")
+
 local detail = false
-require("oil").setup({
+oil.setup({
 	view_options = {
 		show_hidden = true,
 	},
@@ -23,8 +25,12 @@ require("oil").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>e", ":Oil --float<CR>", { desc = "Open Oil file floating" })
-vim.keymap.set("n", "<leader>E", ":Oil<CR>", { desc = "Open Oil file explorer" })
+vim.keymap.set("n", "<leader>e", function()
+	oil.toggle_float()
+end, { desc = "Open Oil file floating" })
+vim.keymap.set("n", "<leader>E", function()
+	oil.open()
+end, { desc = "Open Oil file explorer" })
 
 vim.pack.add({ "https://github.com/refractalize/oil-git-status.nvim" })
 

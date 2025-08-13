@@ -1,7 +1,7 @@
-vim.pack.add(
+vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
-	{ src = "https://github.com/refractalize/oil-git-status.nvim" }
-)
+	{ src = "https://github.com/refractalize/oil-git-status.nvim" },
+})
 
 local oil = require("oil")
 

@@ -1,6 +1,6 @@
 return {
 	-- Command and arguments to start the server.
-	cmd = { "jsonls" },
+	cmd = { "vscode-json-language-server" },
 
 	-- Filetypes to automatically attach to.
 	filetypes = { "json" },

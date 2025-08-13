@@ -10,6 +10,9 @@ vim.lsp.enable({
 	"lua_ls",
 	"gopls",
 	"jsonls",
+	"tailwindcss",
+	"vtsls",
+	"vue_ls",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {

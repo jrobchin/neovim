@@ -4,7 +4,23 @@ vim.pack.add({
 
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all" (the listed parsers MUST always be installed)
-	ensure_installed = { "lua", "markdown", "markdown_inline", "json", "go", "gomod", "gosum", "json" },
+	ensure_installed = {
+		"lua",
+		"markdown",
+		"markdown_inline",
+		"json",
+		"go",
+		"gomod",
+		"gosum",
+		"json",
+		"vue",
+		"typescript",
+		"tsx",
+		"csv",
+		"dockerfile",
+		"svelte",
+		"yaml",
+	},
 
 	-- Automatically install missing parsers when entering buffer
 	-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally

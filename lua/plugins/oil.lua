@@ -1,38 +1,33 @@
-vim.pack.add({
-	{ src = "https://github.com/stevearc/oil.nvim" },
-	{ src = "https://github.com/refractalize/oil-git-status.nvim" },
-})
-
-local oil = require("oil")
-
-local detail = false
-oil.setup({
-	view_options = {
-		show_hidden = true,
-	},
-	win_options = {
-		signcolumn = "yes:2",
-	},
-	keymaps = {
-		["gd"] = {
-			desc = "Toggle file detail view",
-			callback = function()
-				detail = not detail
-				if detail then
-					require("oil").set_columns({ "icon", "permissions", "size", "mtime" })
-				else
-					require("oil").set_columns({ "icon" })
-				end
-			end,
-		},
-	},
-})
-
-vim.keymap.set("n", "<leader>e", function()
-	oil.open()
-end, { desc = "Open Oil file explorer" })
-vim.keymap.set("n", "<leader>E", function()
-	oil.toggle_float()
-end, { desc = "Open Oil file floating" })
-
-require("oil-git-status").setup()
+return {
+  'stevearc/oil.nvim',
+  ---@module 'oil'
+  ---@type oil.SetupOpts
+  opts = {
+  	view_options = {
+      show_hidden = true,
+    },
+    win_options = {
+      signcolumn = "yes:2",
+    },
+    keymaps = {
+      ["gd"] = {
+        desc = "Toggle file detail view",
+        callback = function()
+          detail = not detail
+          if detail then
+            require("oil").set_columns({ "icon", "permissions", "size", "mtime" })
+          else
+            require("oil").set_columns({ "icon" })
+          end
+        end,
+      },
+    },
+  },
+  -- Optional dependencies
+  dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+  lazy = false,
+  keys = {
+    { "<leader>e", "<cmd>Oil<cr>", desc = "Open Oil" }
+  }
+}

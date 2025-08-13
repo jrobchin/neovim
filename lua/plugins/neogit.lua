@@ -11,6 +11,6 @@ return {
     },
   },
   keys = {
-    { "<leader>gs", "<cmd>Neogit<cr>", desc = "Neogit status" }
+    { "<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit status" }
   }
 }

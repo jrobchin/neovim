@@ -47,6 +47,15 @@ wk.add({
 		-- Toggles
 		{ "<leader>q", toggle_quickfix, desc = "Toggle quickfix list", mode = "n" },
 		{ "<leader>l", toggle_loclist, desc = "Toggle location list", mode = "n" },
+
+		-- LSP
+		{
+			"gl",
+			function()
+				vim.diagnostic.open_float()
+			end,
+			desc = "Open floating diagnostics",
+		},
 	},
 
 	-- Insert

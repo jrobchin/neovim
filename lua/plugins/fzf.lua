@@ -12,6 +12,7 @@ return {
 			{ "<leader>fk", "<cmd>FzfLua keymaps<cr>", desc = "Find keymaps" },
 			{ "<leader><leader>", "<cmd>FzfLua buffers<cr>", desc = "List buffers" },
 			{ "<leader>/", "<cmd>FzfLua lgrep_curbuf<cr>", desc = "Find fzf buildins" },
+			{ "<leader>'", "<cmd>FzfLua lgrep_curbuf resume=true<cr>", desc = "Find fzf buildins" },
 		},
 		config = function()
 			require("fzf-lua").setup()

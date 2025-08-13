@@ -1,5 +1,16 @@
 return {
 	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- See the configuration section for more details
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	{
 		"saghen/blink.compat",
 		-- use the latest release, via version = '*', if you also use the latest release for blink.cmp
 		version = "*",
@@ -50,7 +61,7 @@ return {
 			-- Default list of enabled providers defined so that you can extend it
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer", "emoji" },
+				default = { "lazydev", "lsp", "path", "snippets", "buffer", "emoji" },
 				providers = {
 					emoji = {
 						module = "blink-emoji",
@@ -65,6 +76,12 @@ return {
 								vim.o.filetype
 							)
 						end,
+					},
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink",
+						-- make lazydev completions top priority (see `:h blink.cmp`)
+						score_offset = 100,
 					},
 				},
 			},

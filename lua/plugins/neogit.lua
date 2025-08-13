@@ -9,8 +9,8 @@ return {
     integrations = {
       diffview = true
     },
+  },
+  keys = {
+    { "<leader>gs", "<cmd>Neogit<cr>", desc = "Neogit status" }
   }
-  -- keys = {
-  --   { "<leader>gs", "<cmd>Neogit
-  -- }
 }

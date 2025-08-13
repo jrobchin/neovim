@@ -57,11 +57,8 @@ wk.add({
 			desc = "Open floating diagnostics",
 		},
 	},
-
-	-- Insert
-	{ "<Down>", "<C-\\><C-o>gj", desc = "Navigate down (visual line)", mode = "i" },
-	{ "<Up>", "<C-\\><C-o>gk", desc = "Navigate up (visual line)", mode = "i" },
-
-	-- Visual-only
-	{ "<leader>x", "<Cmd>:lua<CR>", desc = "Lua: execute current selection", mode = "v" },
+	{
+		mode = { "i" },
+		{ "jk", "<esc>", desc = "Exit insert mode" },
+	},
 })

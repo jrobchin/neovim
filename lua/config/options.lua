@@ -40,3 +40,7 @@ vim.opt.undofile = true
 
 -- Set the default border for all floating windows
 vim.opt.winborder = "rounded"
+
+-- Allow scrolling past the end of the file
+vim.opt.scrolloff = 8 -- This keeps cursor centered when possible
+vim.opt.sidescrolloff = 8 -- Horizontal scrolling offset

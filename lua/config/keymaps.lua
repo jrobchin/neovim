@@ -36,8 +36,8 @@ wk.add({
 		{ "<C-l>", ":set hlsearch!<cr><C-l>", desc = "Toggle search highlighting" },
 
 		-- Buffers
-		{ "<leader>gb", "<cmd>bnext<cr>", desc = "Next buffer" },
-		{ "<leader>gB", "<cmd>bprev<cr>", desc = "Previous buffer" },
+		{ "gb", "<cmd>bnext<cr>", desc = "Next buffer" },
+		{ "gB", "<cmd>bprev<cr>", desc = "Previous buffer" },
 
 		-- System clipboard
 		{ "<leader>y", "\"+y", desc = "Copy to system clipboard" },

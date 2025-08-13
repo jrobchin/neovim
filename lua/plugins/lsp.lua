@@ -175,12 +175,6 @@ return {
 		--  - settings (table): Override the default settings passed when initializing the server.
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
-			bashls = {},
-			marksman = {},
-			gopls = {},
-			pyright = {},
-			ts_ls = {},
-
 			lua_ls = {
 				-- cmd = { ... },
 				-- filetypes = { ... },
@@ -193,6 +187,12 @@ return {
 					},
 				},
 			},
+
+			bashls = {},
+			marksman = {},
+			gopls = {},
+			pyright = {},
+			vue_ls = {},
 		}
 
 		-- Ensure the servers and tools above are installed
@@ -232,5 +232,29 @@ return {
 				end,
 			},
 		})
+
+		-- Set up non-mason-lspconfig
+		local vue_language_server_path = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+		local vue_plugin = {
+			name = "@vue/typescript-plugin",
+			location = vue_language_server_path,
+			languages = { "vue" },
+			configNamespace = "typescript",
+		}
+		vim.lsp.config("vtsls", {
+			settings = {
+				vtsls = {
+					tsserver = {
+						globalPlugins = {
+							vue_plugin,
+						},
+					},
+				},
+			},
+			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+		})
+
+		vim.lsp.enable("vtsls")
+		vim.lsp.enable("vue_ls")
 	end,
 }

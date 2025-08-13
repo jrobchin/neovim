@@ -36,4 +36,13 @@ return {
 	{
 		"NMAC427/guess-indent.nvim",
 	},
+	-- {
+	-- 	"sphamba/smear-cursor.nvim",
+	-- 	opts = {},
+	-- },
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
 }

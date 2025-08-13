@@ -11,6 +11,8 @@ return {
 
 		-- Useful status updates for LSP.
 		{ "j-hui/fidget.nvim", opts = {} },
+
+		{ "folke/which-key.nvim" },
 	},
 	config = function()
 		--  This function gets run when an LSP attaches to a particular buffer.
@@ -22,7 +24,7 @@ return {
 			callback = function(event)
 				-- NOTE: Remember that Lua is a real programming language, and as such it is possible
 				-- to define small helper and utility functions so you don't have to repeat yourself.
-				--
+
 				-- In this case, we create a function that lets us more easily define mappings specific
 				-- for LSP related items. It sets the mode, buffer and description for us each time.
 				local map = function(keys, func, desc, mode)
@@ -209,10 +211,10 @@ return {
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua",
-      "eslint_d",
+			"eslint_d",
 			"prettierd",
-      "isort",
-      "black"
+			"isort",
+			"black",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

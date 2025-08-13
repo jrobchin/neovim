@@ -51,9 +51,9 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 		},
 		keys = {
-			{ "<leader>cc", "<cmd>CodeCompanionChat<CR>", desc = "Open CodeCompanion Chat" },
-			{ "<leader>ci", "<cmd>CodeCompanion<CR>", desc = "Start CodeCompanion Inline Assistant" },
-			{ "<leader>ca", "<cmd>CodeCompanionActions<CR>", desc = "Open CodeCompanion Action Palette" },
+			{ "<leader>ca", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "CodeCompanion actions" },
+			{ "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "CodeCompanion toggle chat" },
+			{ "<leader>ci", "<cmd>CodeCompanion<cr>", mode = { "n", "v" }, desc = "CodeCompanion inline" },
 		},
 	},
 	{

@@ -10,6 +10,7 @@ return {
 			{ "<leader>fh", "<cmd>FzfLua help_tags<cr>", desc = "Find help tags" },
 			{ "<leader>fi", "<cmd>FzfLua builtin<cr>", desc = "Find fzf buildins" },
 			{ "<leader>fk", "<cmd>FzfLua keymaps<cr>", desc = "Find keymaps" },
+			{ "<leader>fo", "<cmd>FzfLua oldfiles<cr>", desc = "Find oldfiles" },
 			{ "<leader><leader>", "<cmd>FzfLua buffers<cr>", desc = "List buffers" },
 			{ "<leader>/", "<cmd>FzfLua lgrep_curbuf<cr>", desc = "Find fzf buildins" },
 			{ "<leader>'", "<cmd>FzfLua lgrep_curbuf resume=true<cr>", desc = "Find fzf buildins" },

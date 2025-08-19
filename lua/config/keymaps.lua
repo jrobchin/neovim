@@ -29,15 +29,23 @@ end
 wk.add({
 	{
 		mode = { "n", "x" },
+
+		-- Navigation
 		{ "j", "gj", desc = "Navigate down (visual line)" },
 		{ "k", "gk", desc = "Navigate up (visual line)" },
 		{ "<Down>", "gj", desc = "Navigate down (visual line)" },
 		{ "<Up>", "gk", desc = "Navigate up (visual line)" },
-		{ "<C-l>", ":set hlsearch!<cr><C-l>", desc = "Toggle search highlighting" },
+		{ "<C-l>", "<cmd>set hlsearch!<cr><C-l>", desc = "Toggle search highlighting" },
+
+		-- Files
+		{ "<leader>ww", "<cmd>write<cr>", desc = "Write file" },
+		{ "<leader>wa", "<cmd>wall<cr>", desc = "Write all files" },
 
 		-- Buffers
-		{ "gb", "<cmd>bnext<cr>", desc = "Next buffer" },
-		{ "gB", "<cmd>bprev<cr>", desc = "Previous buffer" },
+		{ "<leader>bd", "<cmd>bdelete<cr>", desc = "Delete buffer" },
+		{ "<leader>bD", "<cmd>bdelete!<cr>", desc = "Force delete buffer" },
+		{ "<leader>bo", "<cmd>%bd|e#<cr>", desc = "Delete all buffers except current" },
+		{ "<leader>ba", "<cmd>bufdo bd<cr>", desc = "Delete all buffers" },
 
 		-- System clipboard
 		{ "<leader>y", "\"+y", desc = "Copy to system clipboard" },
@@ -45,8 +53,8 @@ wk.add({
 		{ "<leader>P", "\"+P", desc = "Paste from system clipboard before cursor" },
 
 		-- Toggles
-		{ "<leader>q", toggle_quickfix, desc = "Toggle quickfix list", mode = "n" },
-		{ "<leader>l", toggle_loclist, desc = "Toggle location list", mode = "n" },
+		{ "<leader>q", toggle_quickfix, desc = "Toggle quickfix list" },
+		{ "<leader>l", toggle_loclist, desc = "Toggle location list" },
 
 		-- LSP
 		{
@@ -56,6 +64,12 @@ wk.add({
 			end,
 			desc = "Open floating diagnostics",
 		},
+
+		-- Links
+		{ "gx", "<esc>:URLOpenUnderCursor<cr>", desc = "Open URL under cursor" },
+
+		-- Spelling
+		{ "<leader>sf", "1z=", desc = "Fix spelling with the first option" },
 	},
 	{
 		mode = { "i" },

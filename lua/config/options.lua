@@ -10,9 +10,9 @@ vim.opt.signcolumn = "yes"
 -- Cursorline
 vim.opt.cursorline = true
 
--- Show whitespace characters
--- vim.opt.list = true
--- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- Spelling
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
 
 -- Search
 vim.opt.ignorecase = true
@@ -25,7 +25,7 @@ vim.opt.inccommand = "split"
 vim.opt.wrap = true
 vim.opt.breakindent = true
 
--- Tabstops
+-- Tab stops
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2

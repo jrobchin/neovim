@@ -3,14 +3,15 @@ return {
 	lazy = false,
 	config = function()
 		require("conform").setup({
+			async = true,
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "isort", "black" },
-				typescript = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
-				vue = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
+				typescript = { "prettierd", "prettier", stop_after_first = true },
+				vue = { "prettierd", "prettier", stop_after_first = true },
+				markdown = { "prettierd", "prettier", stop_after_first = true },
 			},
-			format_on_save = {
-				timeout_ms = 500,
+			format_after_save = {
 				lsp_format = "fallback",
 			},
 		})

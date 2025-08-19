@@ -1,6 +1,7 @@
 return {
 	{
 		"olimorris/codecompanion.nvim",
+		tag = "v17.15.0",
 		lazy = false,
 		opts = {
 			strategies = {
@@ -34,7 +35,7 @@ return {
 						},
 						schema = {
 							model = {
-								default = "anthropic/claude-3.7-sonnet",
+								default = "anthropic/claude-sonnet-4",
 							},
 						},
 					})

@@ -10,14 +10,31 @@ return {
 	},
 	{
 		"OXY2DEV/markview.nvim",
-		priority = 49, -- load before nvim-treesitter
 		event = "VeryLazy",
+		priority = 49, -- load before nvim-treesitter
 		lazy = false,
 		opts = {
 			preview = {
-				filetypes = { "markdown", "codecompanion" },
+				filetypes = { "md", "markdown", "codecompanion" },
 				ignore_buftypes = {},
+				condition = function(buffer)
+					local ft, bt = vim.bo[buffer].ft, vim.bo[buffer].bt
+
+					if bt == "nofile" and ft == "codecompanion" then
+						return true
+					elseif bt == "nofile" then
+						return false
+					else
+						return true
+					end
+				end,
 			},
+			markdown = {
+				headings = { shift_width = 0 },
+			},
+		},
+		keys = {
+			{ "<leader>m", "<cmd>Markview<cr>", desc = "Toggle Markview" },
 		},
 	},
 }

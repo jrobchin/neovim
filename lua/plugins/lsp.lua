@@ -193,6 +193,7 @@ return {
 				bashls = {},
 				gopls = {},
 				pyright = {},
+				vtsls = {},
 				vue_ls = {
 					settings = {
 						typescript = {
@@ -273,11 +274,6 @@ return {
 							globalPlugins = {
 								vue_plugin,
 							},
-						},
-					},
-					typescript = {
-						validate = {
-							enable = false,
 						},
 					},
 				},

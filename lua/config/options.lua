@@ -44,3 +44,6 @@ vim.opt.winborder = "rounded"
 -- Allow scrolling past the end of the file
 vim.opt.scrolloff = 8 -- This keeps cursor centered when possible
 vim.opt.sidescrolloff = 8 -- Horizontal scrolling offset
+
+-- Global statusline
+vim.opt.laststatus = 3

@@ -42,10 +42,32 @@ wk.add({
 		{ "<leader>wa", "<cmd>wall<cr>", desc = "Write all files" },
 
 		-- Buffers
+		{
+			"<leader>b",
+			group = "Buffers",
+		},
 		{ "<leader>bd", "<cmd>bdelete<cr>", desc = "Delete buffer" },
 		{ "<leader>bD", "<cmd>bdelete!<cr>", desc = "Force delete buffer" },
 		{ "<leader>bo", "<cmd>%bd|e#<cr>", desc = "Delete all buffers except current" },
 		{ "<leader>ba", "<cmd>bufdo bd<cr>", desc = "Delete all buffers" },
+		{
+			"<leader>bp",
+			function()
+				local path = vim.fn.expand("%:.")
+				vim.fn.setreg("+", path)
+				vim.notify("Copied relative path: " .. path)
+			end,
+			desc = "Copy Relative Path",
+		},
+		{
+			"<leader>bP",
+			function()
+				local path = vim.fn.expand("%:p")
+				vim.fn.setreg("+", path)
+				vim.notify("Copied absolute path: " .. path)
+			end,
+			desc = "Copy Absolute Path",
+		},
 
 		-- System clipboard
 		{ "<leader>y", "\"+y", desc = "Copy to system clipboard" },

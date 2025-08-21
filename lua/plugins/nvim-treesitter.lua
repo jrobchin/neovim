@@ -24,6 +24,8 @@ return {
 			"dockerfile",
 			"svelte",
 			"yaml",
+			"html",
+			"xml",
 		},
 
 		-- Install parsers synchronously (only applied to `ensure_installed`)

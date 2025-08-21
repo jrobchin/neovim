@@ -1,5 +1,6 @@
 return {
 	"folke/trouble.nvim",
+	enabled = false,
 	opts = {
 		modes = {
 			my_diagnostics = {

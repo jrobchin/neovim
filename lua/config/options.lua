@@ -1,49 +1,85 @@
 -- options
 --------------------------------------------------------------------------------
+local opt = vim.opt
+
 -- Relative and absolute line numbers combined
-vim.opt.number = true
-vim.opt.relativenumber = true
+opt.number = true
+opt.relativenumber = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = "yes"
+opt.signcolumn = "yes"
 
 -- Cursorline
-vim.opt.cursorline = true
+opt.cursorline = true
 
 -- Spelling
-vim.opt.spelllang = "en_us"
-vim.opt.spell = true
+opt.spelllang = "en_us"
+opt.spell = true
 
 -- Search
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+opt.ignorecase = true
+opt.smartcase = true
 
 -- Preview substitutions
-vim.opt.inccommand = "split"
+opt.inccommand = "split"
 
 -- Text wrapping
-vim.opt.wrap = true
-vim.opt.breakindent = true
+opt.wrap = true
+opt.breakindent = true
 
 -- Tab stops
-vim.opt.expandtab = true
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+opt.expandtab = true
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 
 -- Window splitting
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+opt.splitright = true
+opt.splitbelow = true
 
 -- Save undo history
-vim.opt.undofile = true
+opt.undofile = true
 
 -- Set the default border for all floating windows
-vim.opt.winborder = "rounded"
+opt.winborder = "rounded"
 
 -- Allow scrolling past the end of the file
-vim.opt.scrolloff = 8 -- This keeps cursor centered when possible
-vim.opt.sidescrolloff = 8 -- Horizontal scrolling offset
+opt.scrolloff = 8 -- This keeps cursor centered when possible
+opt.sidescrolloff = 8 -- Horizontal scrolling offset
 
 -- Global statusline
-vim.opt.laststatus = 3
+opt.laststatus = 3
+
+-- Scrolling
+opt.smoothscroll = true
+
+-- Fill chars
+opt.fillchars = {
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+}
+
+-- Folding
+local function foldexpr()
+	local buf = vim.api.nvim_get_current_buf()
+	if vim.b[buf].ts_folds == nil then
+		-- as long as we don't have a filetype, don't bother
+		-- checking if treesitter is available (it won't)
+		if vim.bo[buf].filetype == "" then
+			return "0"
+		end
+		if vim.bo[buf].filetype:find("dashboard") then
+			vim.b[buf].ts_folds = false
+		else
+			vim.b[buf].ts_folds = pcall(vim.treesitter.get_parser, buf)
+		end
+	end
+	return vim.b[buf].ts_folds and vim.treesitter.foldexpr() or "0"
+end
+
+opt.foldlevel = 99
+opt.foldexpr = "v:foldexpr()"
+opt.foldmethod = "expr"
+opt.foldtext = ""

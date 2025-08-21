@@ -193,6 +193,7 @@ return {
 				bashls = {},
 				gopls = {},
 				pyright = {},
+				emmet_ls = {},
 				vtsls = {},
 				vue_ls = {
 					settings = {

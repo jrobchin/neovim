@@ -74,10 +74,6 @@ wk.add({
 		{ "<leader>p", "\"+p", desc = "Paste from system clipboard after cursor" },
 		{ "<leader>P", "\"+P", desc = "Paste from system clipboard before cursor" },
 
-		-- Toggles
-		{ "<leader>q", toggle_quickfix, desc = "Toggle quickfix list" },
-		{ "<leader>l", toggle_loclist, desc = "Toggle location list" },
-
 		-- LSP
 		{
 			"gl",
@@ -87,11 +83,35 @@ wk.add({
 			desc = "Open floating diagnostics",
 		},
 
+		-- Lists
+		{
+			"<leader>q",
+			group = " Quickfix",
+		},
+		{ "<leader>qp", vim.diagnostic.setqflist, desc = "Populate quickfix list with diagnostics" },
+		{ "<leader>qq", toggle_quickfix, desc = "Toggle quickfix list" },
+		{
+			"<leader>l",
+			group = " Loclist",
+		},
+		{ "<leader>lp", vim.diagnostic.setloclist, desc = "Populate location list with diagnostics" },
+		{ "<leader>ll", toggle_loclist, desc = "Toggle location list" },
+
 		-- Links
 		{ "gx", "<esc>:URLOpenUnderCursor<cr>", desc = "Open URL under cursor" },
+		{
+			"<Leader>k",
+			function()
+				require("lsp_signature").toggle_float_win()
+			end,
+			desc = "Show/hide signature help",
+		},
 
 		-- Spelling
 		{ "<leader>sf", "1z=", desc = "Fix spelling with the first option" },
+
+		-- Formatting
+		{ "<leader>wp", "vapgq", desc = "Wrap paragraph" },
 	},
 	{
 		mode = { "i" },

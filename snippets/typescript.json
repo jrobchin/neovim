@@ -1,0 +1,24 @@
+{
+  "Storybook Story": {
+    "prefix": "story",
+    "body": [
+      "import type { Meta, StoryObj } from \"@nuxtjs/storybook\";",
+      "",
+      "import ${1:ComponentName} from \"./${1:ComponentName}.vue\";",
+      "",
+      "const meta = {",
+      "  title: \"${2:Category}/${3:Title}\",",
+      "  component: ${1:ComponentName},",
+      "  tags: [\"autodocs\"],",
+      "} satisfies Meta<typeof ${1:ComponentName}>;",
+      "",
+      "export default meta;",
+      "type Story = StoryObj<typeof meta>;",
+      "",
+      "export const ${4:${1:ComponentName}}Story: Story = {",
+      "  args: {$5},",
+      "};"
+    ],
+    "description": "Storybook story file template"
+  }
+}

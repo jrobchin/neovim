@@ -68,6 +68,27 @@ wk.add({
 			end,
 			desc = "Copy Absolute Path",
 		},
+		{
+			{
+				"<leader>bn",
+				function()
+					vim.fn.setreg("+", vim.fn.expand("%:t"))
+				end,
+				desc = "Copy file name",
+			},
+		},
+		{
+			"<leader>bN",
+			function()
+				vim.fn.setreg("+", vim.fn.expand("%:t:r"))
+			end,
+			desc = "Copy file name (no ext)",
+		},
+		{
+			"<leader>br",
+			"<cmd>:e<cr>",
+			desc = "Reload buffer",
+		},
 
 		-- System clipboard
 		{ "<leader>y", "\"+y", desc = "Copy to system clipboard" },

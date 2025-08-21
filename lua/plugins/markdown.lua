@@ -15,6 +15,7 @@ return {
 		lazy = false,
 		opts = {
 			preview = {
+				enable = false,
 				filetypes = { "md", "markdown", "codecompanion" },
 				ignore_buftypes = {},
 				condition = function(buffer)

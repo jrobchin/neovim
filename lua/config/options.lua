@@ -2,6 +2,9 @@
 --------------------------------------------------------------------------------
 local opt = vim.opt
 
+-- Confirm before exiting a modified buffer
+opt.confirm = true
+
 -- Relative and absolute line numbers combined
 opt.number = true
 opt.relativenumber = true
@@ -49,6 +52,7 @@ opt.sidescrolloff = 8 -- Horizontal scrolling offset
 
 -- Global statusline
 opt.laststatus = 3
+opt.showmode = false
 
 -- Scrolling
 opt.smoothscroll = true
@@ -57,8 +61,6 @@ opt.smoothscroll = true
 opt.fillchars = {
 	foldopen = "",
 	foldclose = "",
-	fold = " ",
-	foldsep = " ",
 }
 
 -- Folding

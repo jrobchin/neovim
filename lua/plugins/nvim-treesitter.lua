@@ -26,6 +26,8 @@ return {
 				"html",
 				"xml",
 			},
+			ignore_install = {},
+			modules = {},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
 			sync_install = false,
@@ -37,10 +39,20 @@ return {
 			---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
 			-- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<leader>v", -- set to `false` to disable one of the mappings
+					node_incremental = "n",
+					scope_incremental = "s",
+					node_decremental = "N",
+				},
+			},
+
 			highlight = {
 				enable = true,
 
-				disable = function(lang, buf)
+				disable = function(_, buf)
 					local max_filesize = 100 * 1024 -- 100 KB
 					local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
 					if ok and stats and stats.size > max_filesize then

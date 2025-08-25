@@ -18,7 +18,9 @@ return {
 			{ "<leader>'", "<cmd>FzfLua grep_curbuf resume=true<cr>", desc = "Fuzzy search buffer" },
 		},
 		config = function()
-			require("fzf-lua").setup()
+			require("fzf-lua").setup({
+				"hide",
+			})
 		end,
 	},
 }

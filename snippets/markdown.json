@@ -1,0 +1,18 @@
+{
+  "Nuxt Content Document": {
+    "prefix": "nuxtcontent",
+    "body": [
+      "---",
+      "title: \"${1:Document Title}\"",
+      "description: \"${2:Brief description of the content}\"",
+      "image: \"${3:/images/placeholder-300x200.png}\"",
+      "imageCredit: \"${4:https://unsplash.com/@username}\"",
+      "series: ${5|true,false|}",
+      "published: ${6|true,false|}",
+      "---",
+      "",
+      "$0"
+    ],
+    "description": "Create a new Nuxt content document with frontmatter"
+  }
+}

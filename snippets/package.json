@@ -7,12 +7,15 @@
         "path": "./all.json"
       },
       {
-        "language": "vue",
-        "path": "./vue.json"
-      },
-      {
         "language": "typescript",
         "path": "./typescript.json"
+      },
+      {
+        "language": [
+          "md",
+          "markdown"
+        ],
+        "path": "./markdown.json"
       }
     ]
   }

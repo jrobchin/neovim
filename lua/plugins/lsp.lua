@@ -195,30 +195,7 @@ return {
 				pyright = {},
 				emmet_ls = {},
 				vtsls = {},
-				vue_ls = {
-					settings = {
-						typescript = {
-							inlayHints = {
-								enumMemberValues = {
-									enabled = true,
-								},
-								functionLikeReturnTypes = {
-									enabled = true,
-								},
-								propertyDeclarationTypes = {
-									enabled = true,
-								},
-								parameterTypes = {
-									enabled = true,
-									suppressWhenArgumentMatchesName = true,
-								},
-								variableTypes = {
-									enabled = true,
-								},
-							},
-						},
-					},
-				},
+				svelte = {},
 			}
 
 			-- Ensure the servers and tools above are installed
@@ -260,29 +237,13 @@ return {
 			})
 
 			-- Set up non-mason-lspconfig
-			local vue_language_server_path = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
-			local vue_plugin = {
-				name = "@vue/typescript-plugin",
-				location = vue_language_server_path,
-				languages = { "vue" },
-				configNamespace = "typescript",
-			}
 			vim.lsp.config("vtsls", {
 				capabilities = capabilities,
-				settings = {
-					vtsls = {
-						tsserver = {
-							globalPlugins = {
-								vue_plugin,
-							},
-						},
-					},
-				},
-				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+				settings = {},
+				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
 			})
 
 			vim.lsp.enable("vtsls")
-			vim.lsp.enable("vue_ls")
 		end,
 	},
 	{

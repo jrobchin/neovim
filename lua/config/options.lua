@@ -18,6 +18,7 @@ opt.cursorline = true
 -- Spelling
 opt.spelllang = "en_us"
 opt.spell = true
+opt.spelloptions = "camel"
 
 -- Search
 opt.ignorecase = true
@@ -29,6 +30,7 @@ opt.inccommand = "split"
 -- Text wrapping
 opt.wrap = true
 opt.breakindent = true
+opt.linebreak = true
 
 -- Tab stops
 opt.expandtab = true

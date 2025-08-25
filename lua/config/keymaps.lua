@@ -132,7 +132,7 @@ wk.add({
 		{ "<leader>sf", "1z=", desc = "Fix spelling with the first option" },
 
 		-- Formatting
-		{ "<leader>wp", "vapgq", desc = "Wrap paragraph" },
+		{ "<leader>wp", "m`vapgq``", desc = "Wrap paragraph" },
 	},
 	{
 		mode = { "i" },

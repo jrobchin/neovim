@@ -70,3 +70,10 @@ opt.foldlevel = 99
 opt.foldtext = ""
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+-- File types
+vim.filetype.add({
+	extension = {
+		svx = "markdown",
+	},
+})

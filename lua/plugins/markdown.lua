@@ -4,7 +4,7 @@ return {
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		build = "cd app && yarn install",
 		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
+			vim.g.mkdp_filetypes = { "md", "markdown" }
 		end,
 		ft = { "markdown" },
 	},
@@ -16,7 +16,7 @@ return {
 		opts = {
 			preview = {
 				enable = false,
-				filetypes = { "md", "markdown", "codecompanion" },
+				filetypes = { "md", "markdown", "codecompanion", "svx" },
 				ignore_buftypes = {},
 				condition = function(buffer)
 					local ft, bt = vim.bo[buffer].ft, vim.bo[buffer].bt

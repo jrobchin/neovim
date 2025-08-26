@@ -42,7 +42,7 @@ return {
 			incremental_selection = {
 				enable = true,
 				keymaps = {
-					init_selection = "<leader>v", -- set to `false` to disable one of the mappings
+					init_selection = "<cr>", -- set to `false` to disable one of the mappings
 					node_incremental = "n",
 					scope_incremental = "s",
 					node_decremental = "N",

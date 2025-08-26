@@ -1,11 +1,3 @@
--- debug.lua
---
--- Shows how to use the DAP plugin to debug your code.
---
--- Primarily focused on configuring the debugger for Go, but can
--- be extended to other languages as well. That's why it's called
--- kickstart.nvim and not kitchen-sink.nvim ;)
-
 return {
 	-- NOTE: Yes, you can install new plugins here!
 	"mfussenegger/nvim-dap",
@@ -27,28 +19,28 @@ return {
 	keys = {
 		-- Basic debugging keymaps, feel free to change to your liking!
 		{
-			"<F5>",
+			"<leader>dc",
 			function()
 				require("dap").continue()
 			end,
 			desc = "Debug: Start/Continue",
 		},
 		{
-			"<F1>",
+			"<leader>di",
 			function()
 				require("dap").step_into()
 			end,
 			desc = "Debug: Step Into",
 		},
 		{
-			"<F2>",
+			"<leader>do",
 			function()
 				require("dap").step_over()
 			end,
 			desc = "Debug: Step Over",
 		},
 		{
-			"<F3>",
+			"<leader>dO",
 			function()
 				require("dap").step_out()
 			end,
@@ -70,7 +62,7 @@ return {
 		},
 		-- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
 		{
-			"<F7>",
+			"<leader>dD",
 			function()
 				require("dapui").toggle()
 			end,

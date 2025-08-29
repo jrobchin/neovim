@@ -43,9 +43,9 @@ return {
 				enable = true,
 				keymaps = {
 					init_selection = "<cr>", -- set to `false` to disable one of the mappings
-					node_incremental = "n",
+					node_incremental = "<cr>",
 					scope_incremental = "s",
-					node_decremental = "N",
+					node_decremental = "<s-cr>",
 				},
 			},
 

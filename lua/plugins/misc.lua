@@ -60,4 +60,9 @@ return {
 		-- ft = {}, optionally you can load it only in jsx/html
 		event = "VeryLazy",
 	},
+	{
+		"catgoose/nvim-colorizer.lua",
+		event = "BufReadPre",
+		opts = {},
+	},
 }

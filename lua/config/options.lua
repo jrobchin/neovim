@@ -71,6 +71,9 @@ opt.foldtext = ""
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
+-- Colors
+opt.termguicolors = true
+
 -- File types
 vim.filetype.add({
 	extension = {

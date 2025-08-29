@@ -196,6 +196,7 @@ return {
 				emmet_ls = {},
 				vtsls = {},
 				svelte = {},
+				somesass_ls = {},
 			}
 
 			-- Ensure the servers and tools above are installed

@@ -3,6 +3,7 @@ return {
 		"olimorris/codecompanion.nvim",
 		tag = "v17.15.0",
 		lazy = false,
+		enabled = false,
 		opts = {
 			strategies = {
 				chat = {
@@ -67,33 +68,33 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
+			{
+				"echasnovski/mini.diff",
+				config = function()
+					local diff = require("mini.diff")
+					diff.setup({
+						-- Disabled by default
+						source = diff.gen_source.none(),
+					})
+				end,
+			},
+			{
+				"HakonHarnes/img-clip.nvim",
+				opts = {
+					filetypes = {
+						codecompanion = {
+							prompt_for_file_name = false,
+							template = "[Image]($FILE_PATH)",
+							use_absolute_path = true,
+						},
+					},
+				},
+			},
 		},
 		keys = {
 			{ "<leader>ca", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "CodeCompanion actions" },
 			{ "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "CodeCompanion toggle chat" },
 			{ "<leader>ci", "<cmd>CodeCompanion<cr>", mode = { "n", "v" }, desc = "CodeCompanion inline" },
-		},
-	},
-	{
-		"echasnovski/mini.diff",
-		config = function()
-			local diff = require("mini.diff")
-			diff.setup({
-				-- Disabled by default
-				source = diff.gen_source.none(),
-			})
-		end,
-	},
-	{
-		"HakonHarnes/img-clip.nvim",
-		opts = {
-			filetypes = {
-				codecompanion = {
-					prompt_for_file_name = false,
-					template = "[Image]($FILE_PATH)",
-					use_absolute_path = true,
-				},
-			},
 		},
 	},
 }

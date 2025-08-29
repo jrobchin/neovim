@@ -11,6 +11,10 @@
         "path": "./typescript.json"
       },
       {
+        "language": "svelte",
+        "path": "./svelte.json"
+      },
+      {
         "language": [
           "md",
           "markdown"
